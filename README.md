@@ -1,1 +1,1 @@
-# mobile-development-PR1
+# Практическая работа №1 Знакомство с Android Studio
