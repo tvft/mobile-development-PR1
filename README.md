@@ -4,4 +4,7 @@
 Изучение интерфейса Android studio и создание первого простого приложения 
 Ход работы
 1. В начале работы был скачан и настроен Android Studio согласно методичке. Был создан и запущен новый проект "My Application"
-2. <img width="2096" height="1389" alt="Снимок экрана 2026-03-02 183653" src="https://github.com/user-attachments/assets/2fac3b4b-bb42-474b-8d68-0cd46be72dd7" />
+<img width="2096" height="1389" alt="Снимок экрана 2026-03-02 183653" src="https://github.com/user-attachments/assets/2fac3b4b-bb42-474b-8d68-0cd46be72dd7" />
+2. В названии приложения указано авторство путем изменения содержимого файла "strings.xml"<img width="621" height="160" alt="Снимок экрана 2026-03-02 185330" src="https://github.com/user-attachments/assets/725f9a3a-edcb-41ba-b876-cd5623ec26b3" />
+На странице приложения указана дата рождения с помощью свойства страницы TextView.
+<img width="2121" height="1354" alt="2026-03-02_18-56-09" src="https://github.com/user-attachments/assets/39a3f347-4b81-449b-9b74-fdf0e57fd0fe" />
