@@ -13,3 +13,71 @@
 3. На третьем  этапе было выполнено индивидуальное задание согласно варианту. В соответствии с условием, был отрисован оранжевый квадрат, площадь которого в 2 раза меньшн площади экрана.
 
 # Листинг 1 - Класс Drawview для задания 3
+package com.example.myapplication;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.os.Bundle;
+import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Создаем и показываем наш DrawView
+        DrawView drawView = new DrawView(this);
+        setContentView(drawView);
+
+        setTitle("Оранжевый квадрат");
+    }
+}
+
+class DrawView extends View {
+
+    private Paint paint;
+
+    public DrawView(Context context) {
+        super(context);
+        paint = new Paint();
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        // Получаем ширину и высоту экрана
+        int screenWidth = getWidth();
+        int screenHeight = getHeight();
+
+        // Площадь экрана = screenWidth * screenHeight
+        // Площадь квадрата = сторона^2
+        // По условию: сторона^2 = (screenWidth * screenHeight) / 2
+        // Значит: сторона = sqrt((screenWidth * screenHeight) / 2)
+
+        double screenArea = screenWidth * screenHeight;
+        double squareArea = screenArea / 2; // площадь квадрата в 2 раза меньше
+        int sideLength = (int) Math.sqrt(squareArea); // сторона квадрата
+
+        // Заливаем фон белым
+        canvas.drawRGB(255, 255, 255);
+
+        // Рисуем оранжевый квадрат
+        paint.setColor(Color.parseColor("#FFA500")); // Оранжевый цвет
+        paint.setStyle(Paint.Style.FILL);
+
+        // Центрируем квадрат на экране
+        int left = (screenWidth - sideLength) / 2;
+        int top = (screenHeight - sideLength) / 2;
+        int right = left + sideLength;
+        int bottom = top + sideLength;
+
+        canvas.drawRect(left, top, right, bottom, paint);
+
+
+    }
+}
